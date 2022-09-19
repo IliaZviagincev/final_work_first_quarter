@@ -10,6 +10,7 @@ int element = 3;
 string[] newArray = CheckArray(array, element).Split(' ').ToArray();
 PrintArray(array, "Старый");
 PrintArray(newArray, "Новый");
+Console.ReadLine();
 
 string CheckArray(string[] arr, int elem)
 {
