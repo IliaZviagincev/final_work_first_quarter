@@ -6,16 +6,27 @@
 
 Console.WriteLine("Введите слова через пробел");
 string[] array = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).ToArray();
-int element=3;
-string temp=string.Empty;
+int element = 3;
+string[] newArray = CheckArray(array, element).Split(' ').ToArray();
+PrintArray(array, "Старый");
+PrintArray(newArray, "Новый");
 
-for (int i = 0; i < array.Length; i++)
+string CheckArray(string[] arr, int elem)
 {
-    if (array[i].Length==element) temp+=array[i]+" ";
+    string temp = string.Empty;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (array[i].Length == elem) temp += array[i] + " ";
+    }
+    return temp;
 }
-string[] newArray=temp.Split(' ').ToArray();
 
-for (int i = 0; i < newArray.Length; i++)
+void PrintArray(string[] arr, string arrName)
 {
-    Console.Write(newArray[i]+" ");
+    Console.WriteLine();
+    Console.Write($"{arrName} массив: ");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write($"{arr[i]} ");
+    }
 }
